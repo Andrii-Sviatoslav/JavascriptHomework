@@ -285,3 +285,122 @@
 // const inputString = 'i love java script';
 // const outputString = capitalizeFirstLetterOfEachWord(inputString);
 // console.log(outputString);
+
+
+
+// let calcRectangleArea = (height, width) => {
+// let S = height * width;
+// let isInteger = Number.isInteger(height, width);
+
+// if (isInteger) {
+//   return S;
+// } else {
+//   console.log("Error");
+//   return;
+// }
+// }
+
+
+// console.log(calcRectangleArea(2,3));
+// console.log(calcRectangleArea("string",3));
+// console.log(calcRectangleArea(null, 3));
+
+// function checkAge() {
+//   try {
+//     const ageInput = prompt("Будь ласка, введіть ваш вік:");
+
+//     if (ageInput === "") {
+//       throw new Error("The field is empty! Please enter your age");
+//     }
+
+//     const age = parseInt(ageInput);
+
+//     if (isNaN(age)) {
+//       throw new Error("Incorrect data: You entered a non-numeric value");
+//     }
+
+//     if (age < 14) {
+//       throw new Error("Access denied: Your age is less than 14");
+//     }
+
+//     alert("Доступ до перегляду фільму надано!");
+
+//   } catch (error) {
+//     alert(`Помилка: ${error.name}\nОпис: ${error.message}`);
+//   }
+// }
+
+// checkAge();
+
+// class MonthException extends Error {
+//   constructor(message) {
+//     super(message);
+//     this.name = 'MonthException';
+//   }
+// }
+
+// function showMonthName(month) {
+//   const monthNames = [
+//     "January", "February", "March", "April", "May", "June",
+//     "July", "August", "September", "October", "November", "December"
+//   ];
+
+//   if (month < 1 || month > 12 || !Number.isInteger(month)) {
+//     throw new MonthException('Incorrect month number');
+//   }
+
+//   return monthNames[month - 1];
+// }
+
+// try {
+//   console.log(showMonthName(5));
+//   console.log(showMonthName(14));
+// } catch (error) {
+//   console.error(`${error.name}: ${error.message}`);
+// }
+
+// function showUser(id) {
+//   if (id < 0) {
+//     throw new Error(`ID must not be negative: ${id}`);
+//   }
+//   return { id: id };
+// }
+
+// function showUsers(ids) {
+//   const validUsers = [];
+//   for (const id of ids) {
+//     try {
+//       const user = showUser(id);
+//       validUsers.push(user);
+//     } catch (error) {
+//       console.error(`Error: ${error.message}`);
+//     }
+//   }
+//   return validUsers;
+// }
+
+// const users = showUsers([7, -12, 44, 22]);
+// console.log(users);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
