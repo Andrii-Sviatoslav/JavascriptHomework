@@ -1,0 +1,14 @@
+.header {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    text-align: center;
+}
+
+.header-logo-car {
+    display: none;
+    width: 70%;
+    margin-bottom: 10px;
+}   

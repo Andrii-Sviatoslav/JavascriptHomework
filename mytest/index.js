@@ -148,21 +148,21 @@
 
 // While anf For
 
-const subscribers = [
-    {name: "Andrew", isCloseFriend: true},
-    {name: "Sasha", isCloseFriend: false},
-    {name: "Peter", isCloseFriend: false},
-    {name: "Vitaly", isCloseFriend: false},
-    {name: "Sarah", isCloseFriend: true},
-    {name: "Jessica", isCloseFriend: false},
-    {name: "Gunter", isCloseFriend: false},
-    {name: "Brad", isCloseFriend: true},
-];
+// const subscribers = [
+//     {name: "Andrew", isCloseFriend: true},
+//     {name: "Sasha", isCloseFriend: false},
+//     {name: "Peter", isCloseFriend: false},
+//     {name: "Vitaly", isCloseFriend: false},
+//     {name: "Sarah", isCloseFriend: true},
+//     {name: "Jessica", isCloseFriend: false},
+//     {name: "Gunter", isCloseFriend: false},
+//     {name: "Brad", isCloseFriend: true},
+// ];
 
-for(let i = 0; i < subscribers.length; i++) {
-console.log(subscribers[i])
+// for(let i = 0; i < subscribers.length; i++) {
+// console.log(subscribers[i])
 
-}
+// }
 
 // const obj = {
 //     name : "Andrew",
@@ -184,3 +184,14 @@ console.log(subscribers[i])
 //     nation : "ukrainian",
 //     hobby : "football"
 // }
+
+//12.05.25 DOM - Document object Model
+const button = document.querySelector("button");
+const username = document.querySelector("#username");
+const greeting = document.querySelector("#username");
+
+button.addEventListener ("click", () => {
+console.log(username.value);
+greeting.innerHTML += `Hello $(username.value)`;
+username.value = '';
+})
