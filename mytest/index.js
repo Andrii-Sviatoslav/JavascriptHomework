@@ -186,12 +186,19 @@
 // }
 
 //12.05.25 DOM - Document object Model
-const button = document.querySelector("button");
-const username = document.querySelector("#username");
-const greeting = document.querySelector("#username");
+// const button = document.querySelector("button");
+// const username = document.querySelector("#username");
+// const greeting = document.querySelector("#username");
 
-button.addEventListener ("click", () => {
-console.log(username.value);
-greeting.innerHTML += `Hello $(username.value)`;
-username.value = '';
-})
+// button.addEventListener ("click", () => {
+// console.log(username.value);
+// greeting.innerHTML += `Hello $(username.value)`;
+// username.value = '';
+// })
+
+//console.log(localStorage.getItem("name"));
+
+//регулярні вирази 
+
+
+
