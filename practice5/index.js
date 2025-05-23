@@ -189,104 +189,106 @@
 
 
 // Батьківський клас
-class GeometricFigure {
-    getArea() {
-      // Порожній метод, буде перевизначений у нащадках
-      return 0; // За замовчуванням повертаємо 0
-    }
+// class GeometricFigure {
+//     getArea() {
+//       // Порожній метод, буде перевизначений у нащадках
+//       return 0; // За замовчуванням повертаємо 0
+//     }
   
-    toString() {
-      // Повертає назву класу
-      return `Class: ${this.constructor.name}`;
-    }
-  }
+//     toString() {
+//       // Повертає назву класу
+//       return `Class: ${this.constructor.name}`;
+//     }
+//   }
   
-  // Клас нащадок: Трикутник
-  class Triangle extends GeometricFigure {
-    constructor(base, height) {
-      super(); // Викликаємо конструктор батьківського класу
-      this.base = base;
-      this.height = height;
-    }
+//   // Клас нащадок: Трикутник
+//   class Triangle extends GeometricFigure {
+//     constructor(base, height) {
+//       super(); // Викликаємо конструктор батьківського класу
+//       this.base = base;
+//       this.height = height;
+//     }
   
-    getArea() {
-      // Площа трикутника: 0.5 * основа * висота
-      return 0.5 * this.base * this.height;
-    }
-  }
+//     getArea() {
+//       // Площа трикутника: 0.5 * основа * висота
+//       return 0.5 * this.base * this.height;
+//     }
+//   }
   
-  // Клас нащадок: Квадрат
-  class Square extends GeometricFigure {
-    constructor(side) {
-      super(); // Викликаємо конструктор батьківського класу
-      this.side = side;
-    }
+//   // Клас нащадок: Квадрат
+//   class Square extends GeometricFigure {
+//     constructor(side) {
+//       super(); // Викликаємо конструктор батьківського класу
+//       this.side = side;
+//     }
   
-    getArea() {
-      // Площа квадрата: сторона * сторона
-      return this.side * this.side;
-    }
-  }
+//     getArea() {
+//       // Площа квадрата: сторона * сторона
+//       return this.side * this.side;
+//     }
+//   }
   
-  // Клас нащадок: Коло
-  class Circle extends GeometricFigure {
-    constructor(radius) {
-      super(); // Викликаємо конструктор батьківського класу
-      this.radius = radius;
-    }
+//   // Клас нащадок: Коло
+//   class Circle extends GeometricFigure {
+//     constructor(radius) {
+//       super(); // Викликаємо конструктор батьківського класу
+//       this.radius = radius;
+//     }
   
-    getArea() {
-      // Площа кола: PI * радіус^2
-      return Math.PI * this.radius * this.radius;
-    }
-  }
+//     getArea() {
+//       // Площа кола: PI * радіус^2
+//       return Math.PI * this.radius * this.radius;
+//     }
+//   }
   
-  // Зовнішня функція для обробки фігур
-  function handleFigures(figures) {
-    let totalArea = 0;
+//   // Зовнішня функція для обробки фігур
+//   function handleFigures(figures) {
+//     let totalArea = 0;
   
-    for (const figure of figures) {
-      // Перевірка, чи об'єкт належить батьківському класу з урахуванням наслідування
-      if (figure instanceof GeometricFigure) {
-        console.log(figure.toString()); // Виводимо назву класу
-        const area = figure.getArea();
-        console.log(`Area: ${area}`); // Виводимо розраховану площу
-        totalArea += area; // Додаємо до сумарної площі
-      } else {
-        console.log("Об'єкт не є геометричною фігурою:", figure);
-      }
-    }
+//     for (const figure of figures) {
+//       // Перевірка, чи об'єкт належить батьківському класу з урахуванням наслідування
+//       if (figure instanceof GeometricFigure) {
+//         console.log(figure.toString()); // Виводимо назву класу
+//         const area = figure.getArea();
+//         console.log(`Area: ${area}`); // Виводимо розраховану площу
+//         totalArea += area; // Додаємо до сумарної площі
+//       } else {
+//         console.log("Об'єкт не є геометричною фігурою:", figure);
+//       }
+//     }
   
-    // Обчислення сумарної площі за допомогою reduce (альтернативний спосіб або додаткова перевірка)
-    // Цей варіант більш компактний для підрахунку суми
-    const totalAreaReduce = figures.reduce((sum, figure) => {
-      if (figure instanceof GeometricFigure) {
-        return sum + figure.getArea();
-      }
-      return sum; // Ігноруємо об'єкти, які не є GeometricFigure
-    }, 0); // Початкове значення суми 0
+//     // Обчислення сумарної площі за допомогою reduce (альтернативний спосіб або додаткова перевірка)
+//     // Цей варіант більш компактний для підрахунку суми
+//     const totalAreaReduce = figures.reduce((sum, figure) => {
+//       if (figure instanceof GeometricFigure) {
+//         return sum + figure.getArea();
+//       }
+//       return sum; // Ігноруємо об'єкти, які не є GeometricFigure
+//     }, 0); // Початкове значення суми 0
   
-    console.log(`\nСумарна площа всіх фігур (з циклу): ${totalArea}`);
-    console.log(`Сумарна площа всіх фігур (з reduce): ${totalAreaReduce}`);
+//     console.log(`\nСумарна площа всіх фігур (з циклу): ${totalArea}`);
+//     console.log(`Сумарна площа всіх фігур (з reduce): ${totalAreaReduce}`);
   
-    return totalAreaReduce; // Можна повернути сумарну площу
-  }
+//     return totalAreaReduce; // Можна повернути сумарну площу
+//   }
   
   
-  // --- Приклад використання ---
+//   // --- Приклад використання ---
   
-  // Створення екземплярів різних фігур
-  const triangle = new Triangle(4, 5);
-  const square = new Square(7);
-  const circle = new Circle(3);
-  const anotherTriangle = new Triangle(6, 8);
+//   // Створення екземплярів різних фігур
+//   const triangle = new Triangle(4, 5);
+//   const square = new Square(7);
+//   const circle = new Circle(3);
+//   const anotherTriangle = new Triangle(6, 8);
   
-  // Створення масиву об'єктів фігур
-  const myFigures = [triangle, square, circle, anotherTriangle];
+//   // Створення масиву об'єктів фігур
+//   const myFigures = [triangle, square, circle, anotherTriangle];
   
-  // Виклик зовнішньої функції для обробки масиву фігур
-  handleFigures(myFigures);
+//   // Виклик зовнішньої функції для обробки масиву фігур
+//   handleFigures(myFigures);
   
-  console.log("\n--- Приклад з некоректним об'єктом ---");
-  const mixedFigures = [triangle, {name: "Not a figure"}, square];
-  handleFigures(mixedFigures);
+//   console.log("\n--- Приклад з некоректним об'єктом ---");
+//   const mixedFigures = [triangle, {name: "Not a figure"}, square];
+//   handleFigures(mixedFigures);
+  
+  
