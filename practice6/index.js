@@ -149,46 +149,46 @@
 
 // TASK 7 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Створюємо тег <main>
-    const mainElement = document.createElement('main');
+//     // 1. Створюємо тег <main>
+//     const mainElement = document.createElement('main');
 
-    // 2. Додаємо атрибути до <main>
-    // class="mainClass check item"
-    mainElement.classList.add('mainClass', 'check', 'item');
-    // Або можна так, якщо класів небагато:
-    // mainElement.className = 'mainClass check item';
-
-
-    // 3. Створюємо тег <div>
-    const divElement = document.createElement('div');
-
-    // 4. Додаємо атрибут id="myDiv" до <div>
-    divElement.id = 'myDiv';
+//     // 2. Додаємо атрибути до <main>
+//     // class="mainClass check item"
+//     mainElement.classList.add('mainClass', 'check', 'item');
+//     // Або можна так, якщо класів небагато:
+//     // mainElement.className = 'mainClass check item';
 
 
-    // 5. Створюємо тег <p>
-    const pElement = document.createElement('p');
+//     // 3. Створюємо тег <div>
+//     const divElement = document.createElement('div');
 
-    // 6. Додаємо текст "First paragraph" до <p>
-    pElement.textContent = 'First paragraph';
-    // Або: pElement.innerText = 'First paragraph';
-    // Або: pElement.innerHTML = 'First paragraph'; (якщо текст може містити HTML)
+//     // 4. Додаємо атрибут id="myDiv" до <div>
+//     divElement.id = 'myDiv';
 
 
-    // 7. Збираємо структуру:
-    // <p> стає дитиною <div>
-    divElement.appendChild(pElement);
+//     // 5. Створюємо тег <p>
+//     const pElement = document.createElement('p');
 
-    // <div> стає дитиною <main>
-    mainElement.appendChild(divElement);
+//     // 6. Додаємо текст "First paragraph" до <p>
+//     pElement.textContent = 'First paragraph';
+//     // Або: pElement.innerText = 'First paragraph';
+//     // Або: pElement.innerHTML = 'First paragraph'; (якщо текст може містити HTML)
 
-    // <main> стає дитиною <body>
-    // document.body - це пряме посилання на тег <body> вашої сторінки
-    document.body.appendChild(mainElement);
 
-    // Для перевірки можна вивести створений HTML у консоль
-    console.log(document.body.innerHTML);
-    // Або подивитися в інструментах розробника (F12) на вкладці "Elements"
-});
+//     // 7. Збираємо структуру:
+//     // <p> стає дитиною <div>
+//     divElement.appendChild(pElement);
+
+//     // <div> стає дитиною <main>
+//     mainElement.appendChild(divElement);
+
+//     // <main> стає дитиною <body>
+//     // document.body - це пряме посилання на тег <body> вашої сторінки
+//     document.body.appendChild(mainElement);
+
+//     // Для перевірки можна вивести створений HTML у консоль
+//     console.log(document.body.innerHTML);
+//     // Або подивитися в інструментах розробника (F12) на вкладці "Elements"
+// });
