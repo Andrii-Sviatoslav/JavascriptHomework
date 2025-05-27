@@ -110,12 +110,62 @@
 
 // TASK 6 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const widthOutput = document.getElementById('widthOutput');
-        const heightOutput = document.getElementById('heightOutput');
-        function updateWindowSize() {
-            widthOutput.textContent = window.innerWidth;
-            heightOutput.textContent = window.innerHeight;
-        }
-        updateWindowSize();
-        window.addEventListener('resize', updateWindowSize);
+// const widthOutput = document.getElementById('widthOutput');
+//         const heightOutput = document.getElementById('heightOutput');
+//         function updateWindowSize() {
+//             widthOutput.textContent = window.innerWidth;
+//             heightOutput.textContent = window.innerHeight;
+//         }
+//         updateWindowSize();
+//         window.addEventListener('resize', updateWindowSize);
         
+
+// TASK 7 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const citiesByCountry = {
+    usa: ["New-York", "Washington", "Chicago", "Boston"],
+    germany: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
+    ukraine: ["Kyiv", "Lviv", "Odesa", "Dnipro"]
+};
+
+const countrySelect = document.getElementById('country');
+const citySelect = document.getElementById('cities');
+const selectionOutput = document.getElementById('selectionOutput');
+
+function updateCities() {
+    const selectedCountry = countrySelect.value;
+    citySelect.innerHTML = '<option value="">-- Виберіть місто --</option>';
+
+    if (selectedCountry) {
+        citySelect.disabled = false;
+        const cities = citiesByCountry[selectedCountry];
+        cities.forEach(city => {
+            const option = document.createElement('option');
+            option.value = city.toLowerCase().replace(/\s+/g, '-');
+            option.textContent = city;
+            citySelect.appendChild(option);
+        });
+    } else { 
+        citySelect.disabled = true;
+    }
+    updateSelectionOutput();
+}
+
+function updateSelectionOutput() {
+    const selectedCountryName = countrySelect.options[countrySelect.selectedIndex].textContent;
+    const selectedCityName = citySelect.options[citySelect.selectedIndex].textContent;
+
+    if (selectedCountryName && selectedCountryName !== "-- Виберіть країну --") {
+        let outputText = `Країна: ${selectedCountryName}`;
+        if (selectedCityName && selectedCityName !== "-- Виберіть місто --") {
+            outputText += `, Місто: ${selectedCityName}`;
+        }
+        selectionOutput.textContent = outputText;
+    } else {
+        selectionOutput.textContent = '';
+    }
+}
+
+countrySelect.addEventListener('change', updateCities);
+citySelect.addEventListener('change', updateSelectionOutput);
+updateCities()
